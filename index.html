@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ar" dir="rtl" lang="ar" >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE5" />
+        <meta name = "keywords" content = "longin,north,sinaa,north sinaa,form,Create, create an account" /> 
+        <meta name = "description" content = "ملاحي بن عامر 912" />
+        <meta name = "author" content="احمد توفيق هاشل محمد" />
+        <title>DialogLoading</title>
+        <style>
+
+            input{background-color: #2b5cbe;
+                  padding: 8px 24px 8px 24px;
+                  border: 0px;
+                  margin: 5px;
+                  color: #ffffff;
+                  outline: 0px;}
+
+            #content{margin: 10% 40% 0px 29%;}
+
+            #div_rusult{width: 80%;
+                        box-sizing: border-box;
+                        height: 300px;
+                        margin: 6% 10% 0px 10%;
+                        border: 1px solid #d0d0d0;
+                        border-radius: 4px;}
+
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <input type="button" id="in1" value="dialog 1" />
+            <input type="button" id="in2" value="dialog 2" />
+            <input type="button" id="in3" value="dialog 3" />
+        </div>
+        <div id="div_rusult"></div>
+        
+        <script src="./DialogLoading.js"></script>
+        <script>
+            var in1 = document.getElementById("in1");
+            var in2 = document.getElementById("in2");
+            var in3 = document.getElementById("in3");
+            var domElement = document.getElementById("div_rusult");
+
+            in1.onclick = function (){
+                DialogLoading({
+                    text: "جارس التحمسل...", 
+                    background: "#dddddd",
+                    color: "#FAD700",
+                },true);
+            }
+
+            in2.onclick = function (){
+                DialogLoading({
+                    text: "جاري تحميل...", 
+                    background: "#dddddd",
+                    color: "#FAD700",
+                },false,domElement);
+            }
+
+            in3.onclick = function (){
+                var html = "<div id='jsLoade'></div><h4 id ='jsText'>جاري تحميل...</h4>";
+                var style = "#jsLoade{width:50px;height:50px;border:8px solid #dddddd;margin-right:4px;position:relative;z-index:1;border-radius:50%;margin-bottom:32px;border-top:8px solid #F898D6;webkit-animation:skin 0.5s linear infinite;animation:skin 0.5s linear infinite;}#jsText{color:#000000;font-weight:bold;text-align:center;margin:0px;padding:0px;font-size:0.9em;}";
+                DialogLoading({
+                    text: "جاري تحميل...",
+                    html:html,
+                    style:style
+                },true);
+            }
+            
+        </script>
+    </body>
+</html>
